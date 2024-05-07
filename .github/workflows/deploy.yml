@@ -84,7 +84,7 @@ jobs:
         az webapp deployment slot create --name popular-repos --resource-group pied-piper-inc --slot review-pr-${{ github.event.number }} --configuration-source popular-repos
 
     - name: Deploy popular repos
-      uses: azure/webapps-deploy@v2
+      uses: azure/webapps-deploy@v3
       id: popular-repos-web
       with:
         app-name: 'popular-repos'
@@ -111,7 +111,7 @@ jobs:
         subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
     - name: Deploy popular repos
-      uses: azure/webapps-deploy@v2
+      uses: azure/webapps-deploy@v3
       id: popular-repos-web
       with:
         app-name: 'popular-repos'
